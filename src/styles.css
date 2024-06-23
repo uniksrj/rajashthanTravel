@@ -1,0 +1,19 @@
+/* @import "~@angular/material/prebuilt-themes/indigo-pink.css"; */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {    
+    font-family: Arial, sans-serif;
+    /* background: linear-gradient(135deg, #3ABEF9, #1b0ae7c2, #A7E6FF, #0044cc); */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

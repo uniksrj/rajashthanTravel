@@ -1,0 +1,86 @@
+/* .hero-carousel {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px; 
+    margin: 90px auto; 
+}
+
+.picsum-img-wrapper img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}    */
+
+/* .hero_main_container{
+   
+} */
+
+.hero-carousel {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px; 
+    margin: 90px auto;  
+    overflow-x: hidden;
+    background-image: url(../../../assets/bus.jpg);
+    filter: blur(8px);
+    -webkit-filter: blur(8px);
+    height: 100%; 
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/* .picsum-img-wrapper {
+    width: 100%; 
+    overflow: hidden;
+} */
+
+/* .picsum-img-wrapper img {
+    width: 100vw; 
+    height: 100vh; 
+    display: block;
+} */
+/* 
+.bg-text {
+    display: block; */
+    /* background-color: rgb(0,0,0); 
+    background-color: rgba(0,0,0, 0.4); 
+    color: rgb(0, 0, 0); */
+    /* font-weight: bold; */
+    /* border: 3px solid #f1f1f1; */
+    /* position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    width: 80%;
+    padding: 20px;
+    text-align: center;
+    margin: 84px auto;  
+  } */
+
+  /* .hero-carousel {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;    
+    width: 100%;
+    text-align: center;
+  } */
+  
+  .hero-carousel img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+  
+  .bus-search-container {
+    margin-top: 20px;
+    width: 100%;
+  }
+  
