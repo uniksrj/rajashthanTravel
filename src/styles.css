@@ -1,19 +1,18 @@
 /* @import "~@angular/material/prebuilt-themes/indigo-pink.css"; */
-
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Oswald:wght@500&display=swap");
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
 }
 
 body {    
     font-family: Arial, sans-serif;
-    /* background: linear-gradient(135deg, #3ABEF9, #1b0ae7c2, #A7E6FF, #0044cc); */
+    /* background-color:  rgba(7, 19, 113, 0.575); */
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     
 }
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+/* html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; } */

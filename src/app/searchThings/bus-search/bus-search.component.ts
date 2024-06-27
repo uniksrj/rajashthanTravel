@@ -1,9 +1,10 @@
-import { Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 
 @Component({
   selector: 'app-bus-search',
   templateUrl: './bus-search.component.html',
-  styleUrl: './bus-search.component.css'
+  styleUrl: './bus-search.component.css',
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class BusSearchComponent {
   searchCriteria:any = {

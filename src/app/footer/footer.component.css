@@ -1,9 +1,9 @@
 .footer {
-    background-color: #1b0ae7c2;
+    background-color: #3f51b5;
+    font-family: "Inter", sans-serif;
     color: white;
     text-align: center;
     padding: 10px 0;
-    /* position: fixed; */
     left: 0;    
     bottom: 0;
     width: 100%;

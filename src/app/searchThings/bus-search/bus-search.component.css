@@ -1,14 +1,18 @@
-.bus-search-container {
+/* .bus-search-container {
     position: relative;
-    max-width: 600px;
-    margin: 0 auto; 
-    padding: 20px;
+    display: flex;
+    max-width: 1020px;
+    margin: 0px auto;
+    padding: 180px 240px;
     background-color: #f80000;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    z-index: 100;
+    width: 100%;
+    top: -50%; 
+    left: 50%; 
+    transform: translate(-50%, -50%);
   }
-  
+
   .form-group {
     margin-bottom: 15px;
   }
@@ -60,21 +64,101 @@
     border-bottom: 1px solid #ccc;
   }
   
-  /* .bus-search-container {
-    max-width: 600px;
-    margin: 0 auto;
-    padding: 20px;
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  .mat-grid-list {
+    z-index: 1000; 
+  }
+  .mat-grid-list {
+    display: block;
+    position: absolute;
+    z-index: 1000; 
+  }
+   */
+
+   /* .example-card {
+    max-width: 420px;
+  }
+  
+  .example-header-image {
+    background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+    background-size: cover;
+  }
+  
+  .card-container {
+    display: flex;
+    justify-content: space-around; 
+    flex-wrap: wrap; 
+  }
+  
+  .example-card {
+    flex: 1 1 45%; 
+    margin: 10px; 
   } */
+
+  /* .card-container {
+    display: flex;
+    flex-wrap: row wrap;
+    justify-content: center;
+
+  }
+
+  .container_inside {
+    position: relative;
+    background-color: #f1f1f1;
+    width: 100px;
+    margin: 10px;
+    text-align: center;
+    line-height: 75px;
+    font-size: 30px;
+  }
+  
+  .example-card {
+    width: 90%;
+    flex: 1 1 calc(50% - 20px); 
+    margin: 10px;
+    bottom: 290px;
+  }
+  .mat-mdc-card{
+    position: absolute !important;
+  }
+  
+
+  @media (max-width: 600px) {
+    .example-card {
+      flex: 1 1 100%; 
+    }
+  } */
+  
+  
+
+  .search-box {
+    position: absolute;
+    top: 60%;
+    left: 50%; 
+    transform: translate(-50%, -50%);
+    max-width: 600px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    z-index: 10;
+  }
+  
+  .search-box h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #3f51b5;
+  }
   
   mat-form-field {
     width: 100%;
-    margin-bottom: 15px;
+    margin-bottom: 20px;
   }
   
-  /* button {
+  button {
+    display: block;
     width: 100%;
-  } */
+  }
+  
+  
   

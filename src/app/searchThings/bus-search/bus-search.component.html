@@ -1,61 +1,83 @@
-<div class="bus-search-container">
-  <mat-grid-list cols="1" rowHeight="fit">
-    <mat-grid-tile>
-      <form (ngSubmit)="onSearch()">
-        <mat-form-field appearance="fill">
-          <mat-label>Departure Date</mat-label>
-          <input matInput [matDatepicker]="departureDatepicker" [(ngModel)]="searchCriteria.departureDate" name="departureDate" required>
-          <mat-datepicker-toggle matSuffix [for]="departureDatepicker"></mat-datepicker-toggle>
-          <mat-datepicker #departureDatepicker></mat-datepicker>
-        </mat-form-field>
+<!-- <div class="card-container">
+  <div class="container_inside">
+  <mat-card class="example-card" appearance="outlined">
+    <mat-card-header>
+      <div mat-card-avatar class="example-header-image"></div>
+      <mat-card-title>Search Your Bus</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <mat-grid-list cols="1" rowHeight="fit">
+        <mat-grid-tile>
+          <form (ngSubmit)="onSearch()">
+            <mat-form-field appearance="fill">
+              <mat-label>Departure Date</mat-label>
+              <input matInput [matDatepicker]="departureDatepicker" [(ngModel)]="searchCriteria.departureDate" name="departureDate" required>
+              <mat-datepicker-toggle matSuffix [for]="departureDatepicker"></mat-datepicker-toggle>
+              <mat-datepicker #departureDatepicker></mat-datepicker>
+            </mat-form-field>
 
-        <mat-form-field appearance="fill">
-          <mat-label>Departure Time</mat-label>
-          <input matInput [matTimepicker]="departureTimepicker" [(ngModel)]="searchCriteria.departureTime" name="departureTime" required>
-          <mat-timepicker-toggle matSuffix [for]="departureTimepicker"></mat-timepicker-toggle>
-          <mat-timepicker #departureTimepicker></mat-timepicker>
-        </mat-form-field>
+            <mat-form-field appearance="fill">
+              <mat-label>Departure Location</mat-label>
+              <mat-select [(ngModel)]="searchCriteria.departureLocation" name="departureLocation" required>
+                <mat-option *ngFor="let location of locations" [value]="location.value">
+                  {{ location.viewValue }}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
 
-        <mat-form-field appearance="fill">
-          <mat-label>Departure Location</mat-label>
-          <mat-select [(ngModel)]="searchCriteria.departureLocation" name="departureLocation" required>
-            <mat-option *ngFor="let location of locations" [value]="location.value">
-              {{ location.viewValue }}
-            </mat-option>
-          </mat-select>
-        </mat-form-field>
+            <mat-form-field appearance="fill">
+              <mat-label>Arrival Date</mat-label>
+              <input matInput [matDatepicker]="arrivalDatepicker" [(ngModel)]="searchCriteria.arrivalDate" name="arrivalDate" required>
+              <mat-datepicker-toggle matSuffix [for]="arrivalDatepicker"></mat-datepicker-toggle>
+              <mat-datepicker #arrivalDatepicker></mat-datepicker>
+            </mat-form-field>
 
-        <mat-form-field appearance="fill">
-          <mat-label>Arrival Date</mat-label>
-          <input matInput [matDatepicker]="arrivalDatepicker" [(ngModel)]="searchCriteria.arrivalDate" name="arrivalDate" required>
-          <mat-datepicker-toggle matSuffix [for]="arrivalDatepicker"></mat-datepicker-toggle>
-          <mat-datepicker #arrivalDatepicker></mat-datepicker>
-        </mat-form-field>
+            <mat-form-field appearance="fill">
+              <mat-label>Arrival Location</mat-label>
+              <mat-select [(ngModel)]="searchCriteria.arrivalLocation" name="arrivalLocation" required>
+                <mat-option *ngFor="let location of locations" [value]="location.value">
+                  {{ location.viewValue }}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
 
-        <mat-form-field appearance="fill">
-          <mat-label>Arrival Time</mat-label>
-          <input matInput [matTimepicker]="arrivalTimepicker" [(ngModel)]="searchCriteria.arrivalTime" name="arrivalTime" required>
-          <mat-timepicker-toggle matSuffix [for]="arrivalTimepicker"></mat-timepicker-toggle>
-          <mat-timepicker #arrivalTimepicker></mat-timepicker>
-        </mat-form-field>
-
-        <mat-form-field appearance="fill">
-          <mat-label>Arrival Location</mat-label>
-          <mat-select [(ngModel)]="searchCriteria.arrivalLocation" name="arrivalLocation" required>
-            <mat-option *ngFor="let location of locations" [value]="location.value">
-              {{ location.viewValue }}
-            </mat-option>
-          </mat-select>
-        </mat-form-field>
-
-        <button mat-raised-button color="primary" type="submit">Search</button>
-      </form>
-    </mat-grid-tile>
-  </mat-grid-list>
+            <button mat-raised-button color="primary" type="submit">Search</button>
+          </form>
+        </mat-grid-tile>
+      </mat-grid-list>
+    </mat-card-content>
+  </mat-card>
 </div>
-<!-- <mat-form-field appearance="fill">
-  <mat-label>Departure Time</mat-label>
-  <input matInput [matTimepicker]="departureTimepicker" [(ngModel)]="searchCriteria.departureTime" name="departureTime" required>
-  <mat-timepicker-toggle matSuffix [for]="departureTimepicker"></mat-timepicker-toggle>
-  <mat-timepicker #departureTimepicker></mat-timepicker>
-</mat-form-field> -->
+</div> -->
+
+
+<div class="search-box">
+  <h2>Bus Search</h2>
+  <form (ngSubmit)="onSearch()">
+    <mat-form-field appearance="fill">
+      <mat-label>From</mat-label>
+      <mat-select [(ngModel)]="searchCriteria.departureLocation" name="departureLocation" required>
+        <mat-option *ngFor="let location of locations" [value]="location.value">
+          {{ location.viewValue }}
+        </mat-option>
+      </mat-select>
+      <!-- <input matInput placeholder="Departure City"> -->
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>To</mat-label>
+      <mat-select [(ngModel)]="searchCriteria.arrivalLocation" name="arrivalLocation" required>
+        <mat-option *ngFor="let location of locations" [value]="location.value">
+          {{ location.viewValue }}
+        </mat-option>
+      </mat-select>
+      <!-- <input matInput placeholder="Destination City"> -->
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Departure Date</mat-label>
+      <input matInput [matDatepicker]="departureDatepicker" [(ngModel)]="searchCriteria.departureDate" name="departureDate" required>
+      <mat-datepicker-toggle matSuffix [for]="departureDatepicker"></mat-datepicker-toggle>
+      <mat-datepicker #departureDatepicker></mat-datepicker>
+    </mat-form-field>
+    <button mat-raised-button color="primary">Search</button>
+  </form>
+</div>

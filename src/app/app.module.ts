@@ -18,10 +18,11 @@ import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import {  MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
-import { NgxMaterialTimepickerModule } from 'ngx-material-timepicker';
+// import { NgxMaterialTimepickerModule } from 'ngx-material-timepicker';
 import { MatSelectModule } from '@angular/material/select';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { NgxMatDatetimePickerModule, NgxMatTimepickerModule } from '@angular-material-components/datetime-picker';
+import {MatCardModule} from '@angular/material/card';
+// import { NgxMatDatetimePickerModule, NgxMatTimepickerModule } from '@angular-material-components/datetime-picker';
 // import { MatTimepickerModule } from 'mat-timepicker';
 
 @NgModule({
@@ -47,12 +48,15 @@ import { NgxMatDatetimePickerModule, NgxMatTimepickerModule } from '@angular-mat
     MatDatepickerModule,
     MatNativeDateModule,
     MatDatepickerModule,
-    NgxMaterialTimepickerModule,
+    // NgxMaterialTimepickerModule,
     MatSelectModule,
     BrowserAnimationsModule,
-    NgxMaterialTimepickerModule,
-    NgxMatDatetimePickerModule,
-    NgxMatTimepickerModule,
+    MatCardModule
+    
+    // NgxMaterialTimepickerModule,
+    // NgxMatDatetimePickerModule,
+    // NgxMatTimepickerModule,
+  
   ],
   providers: [
     provideAnimationsAsync()
