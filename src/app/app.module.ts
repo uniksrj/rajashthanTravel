@@ -18,12 +18,10 @@ import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import {  MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
-// import { NgxMaterialTimepickerModule } from 'ngx-material-timepicker';
 import { MatSelectModule } from '@angular/material/select';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatCardModule} from '@angular/material/card';
-// import { NgxMatDatetimePickerModule, NgxMatTimepickerModule } from '@angular-material-components/datetime-picker';
-// import { MatTimepickerModule } from 'mat-timepicker';
+import { LoaderPageComponent } from './loader/loader-page/loader-page.component';
 
 @NgModule({
   declarations: [
@@ -34,6 +32,7 @@ import {MatCardModule} from '@angular/material/card';
     FooterComponent,  
     HeaderComponent,
     BusSearchComponent,
+    LoaderPageComponent,
   ],
   imports: [
     BrowserModule,
@@ -48,10 +47,10 @@ import {MatCardModule} from '@angular/material/card';
     MatDatepickerModule,
     MatNativeDateModule,
     MatDatepickerModule,
-    // NgxMaterialTimepickerModule,
     MatSelectModule,
     BrowserAnimationsModule,
-    MatCardModule
+    MatCardModule,
+    
     
     // NgxMaterialTimepickerModule,
     // NgxMatDatetimePickerModule,

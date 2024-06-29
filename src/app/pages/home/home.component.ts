@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
-import { NgbCarouselConfig } from '@ng-bootstrap/ng-bootstrap';
+// import { NgbCarouselConfig } from '@ng-bootstrap/ng-bootstrap';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrl: './home.component.css',
-  providers : [NgbCarouselConfig]
+  // providers : [NgbCarouselConfig]
 })
 export class HomeComponent{
    heading_txt : string = "We Give Trust"

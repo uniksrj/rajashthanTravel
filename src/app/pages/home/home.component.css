@@ -204,6 +204,10 @@ body {
 /* svg style  */
 
 /* ammenties */
+.ammenties{
+  display: flex;
+  justify-content: space-between;
+}
 
 .test_container{
   max-width: 800px; 
@@ -214,8 +218,8 @@ body {
   margin-right: auto;
   margin-left: auto;
   background-color: #fff; /* White background */
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  border-radius: 8px; 
+  /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;  */
 }
 
 .test_container h3 {
@@ -232,4 +236,51 @@ body {
   color: #666;  
   padding: 0 40px;
   line-height: 1.5;
+}
+
+
+.block_amenties{
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  width: 22%;
+  transition: transform 0.3s ease;
+}
+
+
+.block_amenties i {
+  font-size: 40px;
+  color: #3b3a42;
+  margin-bottom: 10px;
+}
+
+.block_amenties p {
+  font-size: 10px;
+  color: #777;
+  font-weight: bold;
+}
+.block_amenties:hover {
+  box-shadow: 0 0 10px rgba(17, 21, 255, 0.324);
+}
+.block_amenties:hover i {
+  color: #2112f3;
+}
+
+@media (max-width: 1024px) {
+  .test_container {
+      flex-wrap: wrap;
+  }
+  
+  .blblock_amentiesock {
+      width: 45%;
+      margin-bottom: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .block_amenties {
+      width: 100%;
+  }
 }
