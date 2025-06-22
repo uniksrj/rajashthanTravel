@@ -5,7 +5,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(51, 51, 51, 0.8); /* semi-transparent background */
+    background: rgb(255, 255, 255); 
     z-index: 9999; /* high z-index to ensure it covers all content */
     display: flex;
     align-items: center;
@@ -14,11 +14,13 @@
   }
   
   .loading-window {
-    background: #333;
+    background: #ffffff;
     border-radius: 6px;
-    border: 3px solid #ffe4e1;
-    color: #ffe4e1;
+    /* border: 3px solid #ffe4e1; */
+    color: #0d0d0e; 
+    /* box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); */
     height: 200px;
+    max-width: 90%;
     position: relative;
     width: 300px;
   }
@@ -46,14 +48,15 @@
     width: 117px;
     height: 42px;
     left: 92px;
-    top: 70px;
+    top: 90px;    
   }
   
   .car .strike {
     position: absolute;
     width: 11px;
     height: 1px;
-    background: #ffe4e1;
+    color: blue;
+    /* background: #ffe4e1; */
     animation: strikes 0.2s linear infinite;
   }
   
@@ -80,7 +83,7 @@
   .car .car-detail {
     position: absolute;
     display: block;
-    background: #ffe4e1;
+    background: #001eff;
     animation: speed 0.5s linear infinite;
   }
   
@@ -91,7 +94,7 @@
     background: none;
     border: 20px solid transparent;
     border-bottom: 8px solid #ffe4e1;
-    border-left: 20px solid #ffe4e1;
+    border-left: 20px solid #001eff;
   }
   
   .car .car-detail.back {
@@ -107,7 +110,7 @@
     left: 12px;
     border-top-left-radius: 30px;
     border-top-right-radius: 45px 40px;
-    border: 4px solid #ffe4e1;
+    border: 4px solid #001eff;
     background: none;
     box-sizing: border-box;
   }
@@ -146,8 +149,8 @@
         -45deg,
         transparent 45%,
         #ffe4e1 46%,
-        #ffe4e1 54%,
-        transparent 55%
+        #1500ff 54%,
+        transparent 55% 
       ),
       linear-gradient(
         90deg,
@@ -163,7 +166,7 @@
         #ffe4e1 54%,
         transparent 55%
       ),
-      radial-gradient(#ffe4e1 29%, transparent 30%, transparent 50%, #ffe4e1 51%),
+      radial-gradient(#ffe4e1 29%, transparent 30%, transparent 50%, #001eff 51%),
       #333;
     animation-name: spin;
   }

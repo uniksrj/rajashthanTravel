@@ -1,0 +1,82 @@
+.main_container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    background-color: rgb(208, 214, 219);
+    padding: 20px;
+  }
+
+/* General styles */
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+/* Unordered list styles */
+.amenlist {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    height: 30vh;
+    max-width: 250px; 
+}
+
+.amenlist .fl {
+    float: left;
+}
+
+.amenlist .w-90 {
+    width: 90%;
+}
+
+/* List item styles */
+.amenlist li {
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.amenlist li .icon {
+    margin-right: 10px;
+    font-size: 24px; /* Adjust size as needed */
+}
+
+.amenlist li .mtic, 
+.amenlist li .amenity-name {
+    color: #333; /* Adjust color as needed */
+}
+
+/* .icon-am_5::before {
+    
+    content: '';
+    display: inline-block;
+    content: url('../../../../../assets/blanket.png')  no-repeat center center;   
+    width: 24px;
+    height: 24px;
+    background-size: contain; 
+} */
+
+/* Media query for smaller screens */
+@media (max-width: 768px) {
+    .amenlist {
+        height: auto; /* Allow the height to adjust */
+        max-width: 100%; /* Adjust width as needed */
+        flex-direction: row;
+    }
+
+    .amenlist li {
+        width: calc(50% - 20px); /* Two items per row */
+    }
+}
+
+@media (max-width: 480px) {
+    .amenlist li {
+        width: 100%; /* One item per row */
+    }
+}

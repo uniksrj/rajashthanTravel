@@ -1,1 +1,39 @@
-<p>bookings works!</p>
+<div *ngIf="filteredBuses.length > 0">
+    <div *ngFor="let busDetails of filteredBuses; let i = index" class="ticket-box">
+      <div class="ticket-header">
+        <h3>{{ busDetails.name | titlecase}}</h3>           
+          <h2>{{ busDetails.type }}</h2>
+          <div class="rating"><i class="fa-solid fa-star"></i> {{&nbsp; busDetails.rating }}</div>
+      </div>
+      <div class="ticket-details">
+          <p><strong>Departure:</strong> {{ busDetails.departureTime }} | {{ busDetails.departureLocation | titlecase}}</p>
+          <p><strong>Duration:</strong> {{ busDetails.duration }}</p>
+          <p><strong>Arrival:</strong> {{ busDetails.arrivalTime }} | {{ busDetails.arrivalDate }} | {{ busDetails.arrivalLocation | titlecase}}</p>
+          <p><strong>Reviews:</strong> {{ busDetails.reviews }}</p>
+          <p><strong>Availability:</strong> {{ busDetails.seatsAvailable }} Seats ({{ busDetails.singleSeats }} Single)</p>
+          <!-- <p><strong>Amenities:</strong> {{ busDetails.amenities }}</p> -->
+      </div>
+      <div class="ticket-footer">
+          <div class="price">INR {{ busDetails.price }}</div>
+          <button class="button" (click)="viewSeats(i)">VIEW SEATS</button>
+      </div>
+      <div class="amenities">
+          <span (click)="viewamenities(i)">Amenities</span>
+          <span>Bus Photos</span>
+          <span>Boarding & Dropping Points</span>
+          <span>Reviews</span>
+          <span>Booking Policies</span>
+      </div>
+      <div *ngIf="selectedBusIndex === i">
+        <app-seatdeker [busDetails]="busDetails"></app-seatdeker>
+      </div>
+      <div class="no_found" *ngIf="filteredBuses.length === 0">
+        <p>No buses found for the selected criteria.</p>
+      </div>
+      <div *ngIf="selectedAmenities === i">
+        <app-ameneties ></app-ameneties>
+      </div>
+    </div>
+  </div>
+
+  

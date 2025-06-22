@@ -1,17 +1,33 @@
-<div class="container">
-<nav class="navbar fixed-top">    
-    <div class="logo" style="cursor: pointer;">Rajasthan <br /> <span class="logo_text" >Travel</span> </div>
-    <ul class="nav-links" [class.nav-active]="isNavActive">
-        <li><a routerLink="/home">Home</a></li>
-        <li><a routerLink="/book">Book a Bus</a></li>
-        <li><a routerLink="/schedule">Schedule</a></li>
-        <li><a routerLink="/about">About Us</a></li>
-        <li><a routerLink="/contact">Contact</a></li>
-    </ul>
-    <div class="burger" (click)="toggleNav()">
-        <div class="line1"></div>
-        <div class="line2"></div>
-        <div class="line3"></div>
+<!-- <div class="top-header">
+    <div class="contact-info">
+        <i class="fa-solid fa-phone"></i>
+        <p>+161 &nbsp;<span>2456667</span></p>
+        <i class="fa-solid fa-envelope"></i>
+        <p>contactexample.com</p>
     </div>
-</nav>  
+    <div class="auth-buttons">
+        <button class="login-btn">Login</button>
+        <button class="signup-btn">Sign Up</button>
+    </div>
+</div> -->
+
+<div class="container">  
+    <nav class="navbar fixed-top">       
+        <div class="logo" style="cursor: pointer;">
+            <a style="text-decoration: none; color: aliceblue;" routerLink="/home" routerLinkActive="active">Rajasthan <br /> 
+                <span class="logo_text">Travel</span></a>   
+        </div>
+        <ul class="nav-links" #navLinks [ngClass]="{'nav-active': isNavActive}">
+            <li><a routerLink="/home" routerLinkActive="active">Home</a></li>
+            <!-- <li><a routerLink="bookings" routerLinkActive="active">Book a Bus</a></li> -->
+            <!-- <li><a routerLink="/schedule" routerLinkActive="active">Schedule</a></li> -->
+            <li><a routerLink="aboutus" routerLinkActive="active">About Us</a></li>
+            <li><a routerLink="/contact" routerLinkActive="active">Contact</a></li>
+        </ul>
+        <div class="burger" #burger (click)="toggleNav()">  
+            <div class="line1"></div>
+            <div class="line2"></div>
+            <div class="line3"></div>
+        </div>
+    </nav>  
 </div>

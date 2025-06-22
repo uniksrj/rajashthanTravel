@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef, HostListener, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-header',
@@ -6,9 +6,21 @@ import { Component } from '@angular/core';
   styleUrl: './header.component.css'
 })
 export class HeaderComponent {   
-    isNavActive = false;
-  
-    toggleNav() {
-      this.isNavActive = !this.isNavActive;
+  isNavActive = false;
+
+  @ViewChild('navLinks', { static: false }) navLinks!: ElementRef ;
+  @ViewChild('burger', { static: false }) burger!: ElementRef ;
+
+  toggleNav() {
+    this.isNavActive = !this.isNavActive;
+  }
+
+  @HostListener('document:click', ['$event'])
+  onDocumentClick(event: Event): void {
+    if (this.isNavActive && 
+        !this.navLinks.nativeElement.contains(event.target) && 
+        !this.burger.nativeElement.contains(event.target)) {
+      this.isNavActive = false;
     }
+  }
 }

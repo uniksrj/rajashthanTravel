@@ -6,6 +6,12 @@
     "outDir": "./dist/out-tsc",
     "strict": true,
     "noImplicitOverride": true,
+    "typeRoots": [
+      "node_modules/@types"
+    ],
+    "types": [
+      "jquery"
+    ],
     "noPropertyAccessFromIndexSignature": true,
     "noImplicitReturns": true,
     "noFallthroughCasesInSwitch": true,

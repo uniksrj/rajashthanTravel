@@ -1,83 +1,37 @@
-<!-- <div class="card-container">
-  <div class="container_inside">
-  <mat-card class="example-card" appearance="outlined">
-    <mat-card-header>
-      <div mat-card-avatar class="example-header-image"></div>
-      <mat-card-title>Search Your Bus</mat-card-title>
-    </mat-card-header>
-    <mat-card-content>
-      <mat-grid-list cols="1" rowHeight="fit">
-        <mat-grid-tile>
-          <form (ngSubmit)="onSearch()">
-            <mat-form-field appearance="fill">
-              <mat-label>Departure Date</mat-label>
-              <input matInput [matDatepicker]="departureDatepicker" [(ngModel)]="searchCriteria.departureDate" name="departureDate" required>
-              <mat-datepicker-toggle matSuffix [for]="departureDatepicker"></mat-datepicker-toggle>
-              <mat-datepicker #departureDatepicker></mat-datepicker>
-            </mat-form-field>
-
-            <mat-form-field appearance="fill">
-              <mat-label>Departure Location</mat-label>
-              <mat-select [(ngModel)]="searchCriteria.departureLocation" name="departureLocation" required>
-                <mat-option *ngFor="let location of locations" [value]="location.value">
-                  {{ location.viewValue }}
-                </mat-option>
-              </mat-select>
-            </mat-form-field>
-
-            <mat-form-field appearance="fill">
-              <mat-label>Arrival Date</mat-label>
-              <input matInput [matDatepicker]="arrivalDatepicker" [(ngModel)]="searchCriteria.arrivalDate" name="arrivalDate" required>
-              <mat-datepicker-toggle matSuffix [for]="arrivalDatepicker"></mat-datepicker-toggle>
-              <mat-datepicker #arrivalDatepicker></mat-datepicker>
-            </mat-form-field>
-
-            <mat-form-field appearance="fill">
-              <mat-label>Arrival Location</mat-label>
-              <mat-select [(ngModel)]="searchCriteria.arrivalLocation" name="arrivalLocation" required>
-                <mat-option *ngFor="let location of locations" [value]="location.value">
-                  {{ location.viewValue }}
-                </mat-option>
-              </mat-select>
-            </mat-form-field>
-
-            <button mat-raised-button color="primary" type="submit">Search</button>
-          </form>
-        </mat-grid-tile>
-      </mat-grid-list>
-    </mat-card-content>
-  </mat-card>
-</div>
-</div> -->
-
-
 <div class="search-box">
   <h2>Bus Search</h2>
   <form (ngSubmit)="onSearch()">
     <mat-form-field appearance="fill">
       <mat-label>From</mat-label>
       <mat-select [(ngModel)]="searchCriteria.departureLocation" name="departureLocation" required>
-        <mat-option *ngFor="let location of locations" [value]="location.value">
-          {{ location.viewValue }}
+        <mat-option *ngFor="let location of locations" [value]="location.viewValue">
+          {{ location.viewValue | titlecase   }}
         </mat-option>
       </mat-select>
-      <!-- <input matInput placeholder="Departure City"> -->
     </mat-form-field>
     <mat-form-field appearance="fill">
       <mat-label>To</mat-label>
       <mat-select [(ngModel)]="searchCriteria.arrivalLocation" name="arrivalLocation" required>
-        <mat-option *ngFor="let location of locations" [value]="location.value">
-          {{ location.viewValue }}
+        <mat-option *ngFor="let location of locations" [value]="location.viewValue">
+          {{ location.viewValue | titlecase}}
         </mat-option>
       </mat-select>
-      <!-- <input matInput placeholder="Destination City"> -->
     </mat-form-field>
     <mat-form-field appearance="fill">
       <mat-label>Departure Date</mat-label>
-      <input matInput [matDatepicker]="departureDatepicker" [(ngModel)]="searchCriteria.departureDate" name="departureDate" required>
+      <input matInput [matDatepicker]="departureDatepicker" [(ngModel)]="searchCriteria.departureDate" name="departureDate" required (focus)="openDatepicker(departureDatepicker)">
       <mat-datepicker-toggle matSuffix [for]="departureDatepicker"></mat-datepicker-toggle>
       <mat-datepicker #departureDatepicker></mat-datepicker>
     </mat-form-field>
     <button mat-raised-button color="primary">Search</button>
   </form>
 </div>
+
+<!-- <div *ngIf="filteredBuses.length > 0"> -->
+  <!-- <app-bookings  [busDetails]="busDetailsArray"></app-bookings> -->
+<!-- </div> -->
+<!-- *ngFor="let busDetails of busDetailsArray" -->
+<!-- <div *ngIf="filteredBuses.length === 0">
+  <p>No buses found for the selected criteria.</p>
+</div> -->
+<router-outlet></router-outlet>

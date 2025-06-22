@@ -1,4 +1,8 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { DatePipe } from '@angular/common';
+import { HttpClient } from '@angular/common/http';
+import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import { MatDatepicker } from '@angular/material/datepicker';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-bus-search',
@@ -6,28 +10,37 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
   styleUrl: './bus-search.component.css',
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class BusSearchComponent {
+export class BusSearchComponent implements OnInit{
+
+  constructor(private http:HttpClient, private router: Router ,private route: ActivatedRoute,private datetype:DatePipe) {}
   searchCriteria:any = {
-    departureTime: new Date(),
-    arrivalTime: new Date(),
-    departureLocation: '',
-    arrivalLocation: '',
-    departureDate : ''
+    departureLocation: 'sikar',
+    arrivalLocation: 'delhi',
+    departureDate : new Date()
   };
-  locations = [
-    { value: 'NYC', viewValue: 'New York City' },
-    { value: 'LAX', viewValue: 'Los Angeles' },
-    { value: 'CHI', viewValue: 'Chicago' },
-    { value: 'MIA', viewValue: 'Miami' },
-    { value: 'SFO', viewValue: 'San Francisco' }
-  ];
-  searchResults: string[] = [];
+  locations: any[] = [];
+  ngOnInit(): void {
+    this.loadLocations()    
+  }
 
+  loadLocations(): void {
+    this.http.get<any[]>('assets/cities.json').subscribe(data => {
+      this.locations = data;      
+    });
+  }
+  
   onSearch(): void {
-    console.log('Searching with criteria:', this.searchCriteria);
+    console.log(this.searchCriteria);
+    const { departureLocation, arrivalLocation, departureDate } = this.searchCriteria;  
+    if (departureLocation && arrivalLocation && departureDate) {
+      const formattedDate = this.datetype.transform(departureDate, 'dd-MMM-yyyy');
+      this.router.navigate(['/bookings'], { queryParams: {departureLocation,arrivalLocation, departureDate: formattedDate} });
+    } else {
+      alert('Please fill out all fields');
+    }
+  }
 
-    this.searchResults = [
-      `Bus from ${this.searchCriteria.departureLocation} to ${this.searchCriteria.arrivalLocation} departing at ${this.searchCriteria.departureTime} and arriving at ${this.searchCriteria.arrivalTime}`
-    ];
-  } 
+  openDatepicker(picker: MatDatepicker<any>) {
+    picker.open();
+  }
 }

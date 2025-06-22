@@ -22,6 +22,15 @@ import { MatSelectModule } from '@angular/material/select';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatCardModule} from '@angular/material/card';
 import { LoaderPageComponent } from './loader/loader-page/loader-page.component';
+import { SlickCarouselModule } from 'ngx-slick-carousel';
+import { AboutUsComponent } from './pages/about-us/about-us.component';
+import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
+import { HttpClientModule } from '@angular/common/http';
+import { SortPipe } from './sort.pipe';
+import { DatePipe, NgClass } from '@angular/common';
+import { SeatdekerComponent } from './pages/bookings/deker/seatdeker/seatdeker.component';
+import { AddcommaPipe } from './pipes/addcomma.pipe';
+import { AmenetiesComponent } from './pages/bookings/ameneties/ameneties/ameneties.component';
 
 @NgModule({
   declarations: [
@@ -33,6 +42,11 @@ import { LoaderPageComponent } from './loader/loader-page/loader-page.component'
     HeaderComponent,
     BusSearchComponent,
     LoaderPageComponent,
+    AboutUsComponent,
+    SortPipe,
+    SeatdekerComponent,
+    AddcommaPipe,
+    AmenetiesComponent
   ],
   imports: [
     BrowserModule,
@@ -50,6 +64,14 @@ import { LoaderPageComponent } from './loader/loader-page/loader-page.component'
     MatSelectModule,
     BrowserAnimationsModule,
     MatCardModule,
+    SlickCarouselModule,
+    RouterOutlet,
+    RouterLink,
+    RouterLinkActive,
+    HttpClientModule,
+    NgClass
+
+  
     
     
     // NgxMaterialTimepickerModule,
@@ -58,7 +80,8 @@ import { LoaderPageComponent } from './loader/loader-page/loader-page.component'
   
   ],
   providers: [
-    provideAnimationsAsync()
+    provideAnimationsAsync(),
+    DatePipe,
   ],
   bootstrap: [AppComponent]
 })

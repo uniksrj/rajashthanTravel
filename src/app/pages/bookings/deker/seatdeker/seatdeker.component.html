@@ -1,0 +1,48 @@
+<div class="main_container">
+    <div class="bus-decker">
+      <h4 style="margin-top: 5px;">Please choose your seat</h4>
+      <div class="seat-row" *ngFor="let row of [].constructor(busDetails.seatRows); let rowIndex = index">
+        <div class="seat" *ngFor="let seat of [].constructor(busDetails.seatsPerRow); let seatIndex = index"
+             [ngClass]="{'selected': isSeatSelected(rowIndex * busDetails.seatsPerRow + seatIndex)}"
+             (click)="toggleSeat(rowIndex * busDetails.seatsPerRow + seatIndex)">
+          {{ rowIndex * busDetails.seatsPerRow + seatIndex + 1 }}
+        </div>
+      </div>
+    </div>
+  
+    <div class="sidebar" [ngClass]="{'show': showSidebar}">
+      <div class="sidebar-content">        
+        <h3>Seat Details</h3>
+        <mat-form-field appearance="fill">
+          <mat-label>Pickup Location</mat-label>
+          <mat-select [(ngModel)]="pickupLocation">
+            <mat-option *ngFor="let location of locations" [value]="location.viewValue">
+              {{ location.viewValue }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+          <mat-label>Drop Location</mat-label>
+          <mat-select [(ngModel)]="dropLocation">
+            <mat-option *ngFor="let location of locations" [value]="location.viewValue">
+              {{ location.viewValue }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>      
+        <div class="seatPrice">  
+        <p><strong>Seat No:</strong>            
+          <span *ngFor="let item of selectedSeats; let i = index">
+            {{ item }}<span *ngIf="i < selectedSeats.length - 1">, </span>
+          </span>
+          {{ selectedSeats | addcomma }}
+        </p>
+
+        <p><strong>Total Price:</strong>       
+          {{ totalPrice | currency: 'INR' }}
+        </p>  
+      </div>
+        <button mat-raised-button color="primary" (click)="proceedToCheckout()">Proceed to Book</button>
+      </div>
+    </div>
+  </div>
+  

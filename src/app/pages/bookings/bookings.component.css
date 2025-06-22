@@ -1,0 +1,97 @@
+.ticket-box {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    width: 100%;
+    max-width: 1024px;
+    margin: 40px auto;
+    padding: 20px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    transition: transform 0.2s ease-in-out;
+}
+
+.ticket-box:hover {
+    transform: translateY(-5px);
+}
+
+.ticket-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 10px;
+}
+
+.ticket-header h2 {
+    margin: 0;
+    font-size: 1.5em;
+    color: #333;
+}
+
+.ticket-header .rating {
+    background-color: #ffcc00;
+    border-radius: 50%;
+    padding: 5px 15px;
+    font-size: 1em;
+    font-weight: bold;
+}
+
+.ticket-details {
+    margin-top: 20px;
+}
+
+.ticket-details p {
+    margin: 10px 0;
+    font-size: 1em;
+    color: #666;
+}
+
+.ticket-footer {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid #ddd;
+    padding-top: 10px;
+}
+
+.ticket-footer .price {
+    font-size: 1.5em;
+    color: #e74c3c;
+    font-weight: bold;
+}
+
+.ticket-footer .button {
+    background-color: #3498db;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+    transition: background-color 0.3s ease;
+}
+
+.ticket-footer .button:hover {
+    background-color: #2980b9;
+}
+
+.amenities {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    font-size: 0.9em;
+    color: #3498db;
+    cursor: pointer;
+}
+
+
+.no_found{
+    display: block;
+    height: 50vh;
+    margin: 40px auto;
+}
+
+.no_found p{
+    text-align: center;
+}

@@ -1,6 +1,7 @@
 <app-header></app-header>
-<app-loader-page [isFade]="isLoading"></app-loader-page>
-
+<app-loader-page [isLoading]="isLoading"></app-loader-page>
+<!-- <div style="display: flex; flex-wrap: wrap; justify-content: center;">
+    <app-bookings *ngFor="let busDetails of busDetailsArray" [busDetails]="busDetails"></app-bookings>
+  </div> -->
 <router-outlet></router-outlet>
-
 <app-footer></app-footer>   

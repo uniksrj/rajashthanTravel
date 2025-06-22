@@ -1,4 +1,4 @@
-import { Component, OnChanges, OnInit, SimpleChanges, input } from '@angular/core';
+import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 
 @Component({
   selector: 'app-loader-page',
@@ -7,7 +7,7 @@ import { Component, OnChanges, OnInit, SimpleChanges, input } from '@angular/cor
 })
 export class LoaderPageComponent implements OnInit, OnChanges{
 
- @input() isFade: boolean | undefined = true;
+ @Input() isLoading: boolean | undefined = true;
 
   display = true;
   // isFade: any;
@@ -15,9 +15,8 @@ export class LoaderPageComponent implements OnInit, OnChanges{
   constructor(){}
 
   ngOnChanges(changes: SimpleChanges): void {
-    if(changes['isLoading'] && !changes['isLoading'].firstChange && !this.isFade){
-      this.fadeOut();
-      
+    if(changes['isLoading'] && !changes['isLoading'].firstChange && !this.isLoading){
+      this.fadeOut();      
     }
 }
   ngOnInit(): void {
@@ -28,10 +27,10 @@ export class LoaderPageComponent implements OnInit, OnChanges{
   fadeOut(){
     const preloader = document.querySelector('.preloader-overlay') as HTMLElement;
     if(preloader){
-      preloader.style.animation = 'fadeOut 0.4s both';
+      preloader.style.animation = 'fadeOut 0.6s both';
       setTimeout(() => {
         this.display = false;
-      }, 400);
+      }, 800);
     }
   }
 
